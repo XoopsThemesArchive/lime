@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+<! -------------------------Start of Header ------------------------->
+<div align="center"><center>
+<table border="0" width="900" cellspacing="0" cellpadding="0">
+<tr>
+<td width="205" height="16" nowrap="nowrap"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>home.jpg" width="41" height="16" alt="Home" ></a><a href="<{$xoops_url}>/forums"><img src="<{$xoops_imageurl}>forum.jpg" width="41" height="16"alt="Forums" ></a><a href="<{$xoops_url}>/register.php"><img src="<{$xoops_imageurl}>join.jpg" width="41" height="16" alt="Join"></a><a href="<{$xoops_url}>/modules/wfdownloads/"><img src="<{$xoops_imageurl}>file.jpg" width="41" height="16"alt="Downloads"></a><a href="<{$xoops_url}>/modules/smartfaq/"><img src="<{$xoops_imageurl}>about.jpg" width="41" height="16"alt="About" ></a></td>
+<td width="347"><img src="<{$xoops_imageurl}>butto2.jpg" width="347" height="16"></td>
+<td width="340%" align="left"><img src="<{$xoops_imageurl}>button3.jpg" width="347" height="16"></td>
+</tr>
+</table>
+</center></div><div align="center"><center>
+<table border="0" width="900" cellspacing="0" cellpadding="0">
+<tr>
+<td width="530" height="80"><img src="<{$xoops_imageurl}>pagelogo.jpg" width="530" height="80"></td>
+<td width="370" height="80" background="<{$xoops_imageurl}>pagebg.jpg" valign="middle" align="center"><br><form style="margin-top: 0px;" action="<{$xoops_url}>/user.php" method="post"><{$block.lang_username}><input type="text" name="uname" size="12" value="<{$block.unamevalue}>" style="font-family: Tahoma; font-size: 11pt; background-color: rgb(18,140,55); color: rgb(0,0,0); border: 1px solid rgb(0,0,0)" /><{$block.lang_password}><input type="password" name="pass" size="12" style="font-family: Tahoma; font-size: 11pt; background-color: rgb(18,140,55); color: rgb(0,0,0); border: 1px solid rgb(0,0,0)" /><input type="hidden" name="op" value="login" /><input type="submit" value="Login" style="font-family: Tahoma; background-color: rgb(6,84,36); color: rgb(0,0,0); border: 1px groove rgb(0,0,0)"/><br> <center><font face="Tahoma" size="2">Username /&nbsp; Password </center>
+</form></td>
+</tr>
+</table>
+</center></div><div align="center"><center>
+<table border="0" width="900" cellspacing="0" cellpadding="0">
+<tr>
+<td width="89" background="<{$xoops_imageurl}>belowtitleleft.jpg" height="20"></td>
+<td width="811" background="<{$xoops_imageurl}>belowtitlebg.jpg"></td>
+</tr>
+</table>
+</center></div>
+<! ---------------------end of header --------------------------------->
+<! --------------------------Left Block------------->
+<div align="center">
+<table cellspacing="0" width="900">
+<tr>
+<td id="leftcolumn" bgcolor="#000000">
+<!-- Start left blocks loop -->
+<{foreach item=block from=$xoops_lblocks}>
+<{include file="lime/theme_blockleft.html"}>
+<{/foreach}>
+<!-- Fim do "loop" dos blocos da esquerda -->
+</td>
+<! --------------------------End of Left Block------------->
+<td id="centercolumn" bgcolor="#000000">
+<!-- Display center blocks if any -->
+<{if $xoops_showcblock == 1}>
+<table cellspacing="0">
+<tr>
+<td id="centerCcolumn" colspan="2">
+<!-- Start center-center blocks loop -->
+<{foreach item=block from=$xoops_ccblocks}>
+<{include file="lime/theme_blockcenter_c.html"}>
+<{/foreach}>
+<!-- End center-center blocks loop -->
+</td>
+</tr>
+<tr>
+<td id="centerLcolumn">
+<!-- Start center-left blocks loop -->
+<{foreach item=block from=$xoops_clblocks}>
+<{include file="lime/theme_blockcenter_l.html"}>
+<{/foreach}>
+<!-- End center-left blocks loop -->
+</td><td id="centerRcolumn">
+<!-- Start center-right blocks loop -->
+<{foreach item=block from=$xoops_crblocks}>
+<{include file="lime/theme_blockcenter_r.html"}>
+<{/foreach}>
+<!-- End center-right blocks loop -->
+</td>
+</tr>
+</table>
+<{/if}>
+<!-- End display center blocks -->
+<div id="content"><{$xoops_contents}></div>
+</td>
+<{if $xoops_showrblock == 1}>
+<td id="rightcolumn" bgcolor="#000000">
+<!-- Início dos blocos da direita -->
+<{foreach item=block from=$xoops_rblocks}>
+<{include file="lime/theme_blockright.html"}>
+<{/foreach}>
+<!-- End right blocks loop -->
+</td>
+<{/if}>
+</tr>
+</table>
+<table cellspacing="0">
+<tr id="footerbar">
+<td><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<center><hr>
+<strong><small><a href="http://www.4thefort.com">Another</a> <a href="http://xoops.underpop.com">Xoops</a> <a href="http://www.4thefort.com">Theme from 4theFort FortChaos</a></small></strong></center>
+<hr>
+
+</body>
+</html>
+</td>
+</tr>
+</table>
+</body>
+</html> 
